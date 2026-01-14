@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SDClinic - Услуги</title>
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/telegram.css" />
+    <link rel="stylesheet" href="css/burger.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/prices.css" />
+    <link rel="stylesheet" href="css/bvi.css" />
+</head>
+<body>
+<header>
+    <div class="header-top">
+        <!-- Логотип -->
+        <a href="index.html" class="logo">
+            <img src="https://static.tildacdn.com/tild3431-6661-4236-b162-643232306238/logo_sd_2g.jpg" alt="SUNDENT">
+        </a>
+
+        <!-- Адрес и телефон -->
+        <div class="header-address">
+            г. Сочи, ул. Гайдара, 5/1
+            <a href="tel:+79183023455" class="phone">Ежедневно с 9:00 до 20:00</a>
+        </div>
+
+        <!-- Онлайн-запись + Telegram -->
+        <div class="header-right">
+            <a href="appointment.html" class="online-btn">Записаться на прием</a>
+            <a href="https://t.me/SDClinicBot" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
+            </a>
+        </div>
+    </div>
+
+    <!-- Нижняя строка: меню + BVI -->
+    <div class="header-bottom">
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="doctors.html">Врачи</a></li>
+                <li><a href="works.html">Фото работ</a></li>
+                <li><a href="reviews.html">Отзывы</a></li>
+                <li><a href="prices.html">Цены</a></li>
+                <li><a href="services.html">Услуги</a></li>
+                <li><a href="index.html#kids-clinic">Детский кабинет</a></li>
+                <li><a href="promotions.html">Акции</a></li>
+            </ul>
+        </nav>
+        <div class="header-bottom-right">
+            <div class="dropdown">тел. +7 (918) 302-34-55</div>
+            <img src="https://cdn-icons-png.flaticon.com/512/159/159604.png" alt="BVI" id="open-settings">
+        </div>
+    </div>
+
+
+    <!-- Окно настроек -->
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-settings" class="close">&times;</span>
+
+            <h2>Настройки доступности</h2>
+
+            <div class="setting">
+                <label>Цвет фона: <input type="color" id="bg-color-picker"></label>
+            </div>
+
+            <div class="setting">
+                <label>Цвет текста: <input type="color" id="text-color-picker"></label>
+            </div>
+
+            <div class="setting">
+                <label>Шрифт:
+                    <select id="font-select">
+                        <option value="Arial, sans-serif">Arial</option>
+                        <option value="Georgia, serif">Georgia</option>
+                        <option value="Courier New, monospace">Courier New</option>
+                    </select>
+                </label>
+            </div>
+
+            <button id="reset-settings">Сбросить настройки</button>
+        </div>
+    </div>
+    <button id="bvi-exit" style="display: none; position: fixed; top: 60px; right: 20px; z-index: 9999;">
+        Обычная версия
+    </button>
+    <!-- Бургер-меню для мобильных -->
+    <div class="burger-menu" id="burger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</header>
+
+<!-- Мобильное меню -->
+<nav class="mobile-nav" id="mobile-nav">
+    <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="doctors.html">Врачи</a></li>
+        <li><a href="works.html">Фото работ</a></li>
+        <li><a href="reviews.html">Отзывы</a></li>
+        <li><a href="prices.html">Цены</a></li>
+        <li><a href="services.html">Услуги</a></li>
+        <li><a href="index.html#kids-clinic">Детский кабинет</a></li>
+        <li><a href="promotions.html">Акции</a></li>
+
+    </ul>
+    <!-- Контакты внизу -->
+    <div class="mobile-contacts">
+        <p>г. Сочи, ул. Гайдара, 5/1</p>
+        <a href="tel:+79183023455" class="phone">+7 (918) 302-34-55</a>
+        <a href="appointment.html" class="online-btn">Записаться на прием</a>
+
+    </div>
+</nav>
+<main>
+    <div class="header-spacer"></div>
+
+        <section class="services-intro">
+            <h2>Прайс-лист</h2>
+            <p class="price-description">На этой странице приведены цены на основные направления. Точный план лечения мы составим вам после очной консультации врача.</p>
+        </section>
+
+    <section class="services-list">
+        <div class="service">
+            <h3>Прием врача-стоматолога детского с психологической подготовкой ребенка</h3>
+            <div class="service-price">от 1 000 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Прием первичный </h3>
+            <p>(осмотр полости рта с помощью дополнительных инструментов и одноразовых аксессуаров (антиВИЧ, антигепатит профилактика), консультация) врача-стоматолога.(к)</p>
+            <div class="service-price">от 500 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Прием повторный </h3>
+            <p>(осмотр полости рта с помощью дополнительных инструментов и одноразовых аксессуаров (антиВИЧ, антигепатит профилактика), консультация) врача-стоматолога.(к)</p>
+            <div class="service-price">от 400 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Консультация по имплантации с участием терапевта, хирурга, ортопеда с определением плана и стоимости лечения</h3>
+            <div class="service-price">от 1 000 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Прием </h3>
+            <p>(осмотр полости рта с помощью дополнительных инструментов и одноразовых аксессуаров (антиВИЧ, антигепатит профилактика), консультация) врача-стоматолога с выдачей справки о состоянии полости рта (к)</p>
+            <div class="service-price">от 1 000 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Прием первичный </h3>
+            <p>(осмотр полости рта с помощью дополнительных инструментов и одноразовых аксессуаров (антиВИЧ, антигепатит профилактика), консультация) зубного врача</p>
+            <div class="service-price">от 500 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Прием повторный  </h3>
+            <p>(осмотр, консультация) зубного врача(к)</p>
+            <div class="service-price">от 400 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Прием детский</h3>
+            <p>(осмотр полости рта с помощью дополнительных инструментов и одноразовых аксессуаров (антиВИЧ, антигепатит профилактика), консультация врача-стоматолога детского первичный(к)</p>
+            <div class="service-price">от 500 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Прием детский повторный</h3>
+            <p> (осмотр полости рта с помощью дополнительных инструментов и одноразовых аксессуаров (антиВИЧ, антигепатит профилактика), консультация врача-стоматолога к)</p>
+            <div class="service-price">от 400 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Консультация ортодонта с составлением плана лечения.</h3>
+            <div class="service-price">от 1 000 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Консультация ортодонта.</h3>
+            <div class="service-price">от 700 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Интралигаментарная местная анестезия</h3>
+            <div class="service-price">от 500 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Проводниковая анестезия</h3>
+            <div class="service-price">от 1 000 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Аппликационная анестезия</h3>
+            <div class="service-price">от 150 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Инфильтрационная анестезия</h3>
+            <div class="service-price">от 800 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Прицельная внутриротовая контактная рентгенография</h3>
+            <div class="service-price">от 500 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Ортопантомография</h3>
+            <div class="service-price">от 1 500 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Компьютерная томография челюстно-лицевой области</h3>
+            <div class="service-price">от 2 500 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Компьютерная томография челюстно-лицевой области 1 сегмент (Эндорежим)</h3>
+            <div class="service-price">от 700 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Компьютерная томография челюстно-лицевой области (контрольный снимок после лечения)</h3>
+            <div class="service-price">от 0 ₽</div>
+        </div>
+        <div class="service">
+            <h3>КТ 2 челюстей и 2 ВНЧС </h3>
+            <p>(комплекс исследований для диагностики состояния зубочелюстной системы с помощью методов и средств лучевой визуализации)</p>
+            <div class="service-price">от 2 500 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Запись на диск компьютерной томографии челюстно-лицевой области </h3>
+            <div class="service-price">от 500 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Изоляция зуба  </h3>
+            <p>(Коффердам, Optidam, применение Optragete)</p>
+            <div class="service-price">от 600 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Глубокое фторирование эмализубa </h3>
+            <p>(Fluoro Dose 5% Sodium fluorid Varnish, Centrix)</p>
+            <div class="service-price">от 500 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Местное применение реминерализующих препаратов одной челюсти, глубокое фторирование (аппликация эмаль/дентин герметизирующего ликвида) Humanchemie Germany</h3>
+            <div class="service-price">от 1 000 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Наложение лечебной прокладки (Life Kerr, MTA, IRM)</h3>
+            <div class="service-price">от 800 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Наложение прокладки из стеклоиономерного цемента (Ionosit)</h3>
+            <div class="service-price">от 400 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Гигиена полости рта и зубов (чистка щеткой с пастой, полировка) Д.</h3>
+            <div class="service-price">от 2 000 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Удаление временного зуба Д.</h3>
+            <div class="service-price">от 1 000 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Удаление временного зуба (сложное) Д.</h3>
+            <div class="service-price">от 2 400 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Восстановление зуба пломбой на 1 поверхности стеклоиономерными цементами (Fuji 9, Vitremer)</h3>
+            <div class="service-price">от 2 600 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Восстановление зуба пломбой с нарушением контактного пункта (2 повехности) материалами химического отверждения (Glassin Kids))</h3>
+            <div class="service-price">от 2 200 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Восстановление зуба пломбой IV класс по Блэку с использованием стеклоиономерных цементов (Fuji 9, Vitremer)</h3>
+            <div class="service-price">от 4 400 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Наложение временной пломбы (д)</h3>
+            <div class="service-price">от 500 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Восстановление зуба пломбой на 1 поверхности фотополимером (Estelite, Gradia, G-aenial, Ceram X, Esthet X)</h3>
+            <div class="service-price">от 3 500 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Инфильтрация кариеса вестибулярной поверхности (Icon)</h3>
+            <div class="service-price">от 2 500 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Пломбирование 1 корневого канала молочного зуба (Metapaste, цинкоксидэвгеноловая паста)</h3>
+            <div class="service-price">от 250 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Лечение пульпита методом витальной ампутации молочного 1-корневого зуба (анестезия, Pulpotec, временная пломба)</h3>
+            <div class="service-price">от 2 500 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Лечение пульпита методом витальной ампутации молочного многокорневого зуба (анестезия, Pulpotec/IRM, временная пломба)</h3>
+            <div class="service-price">от 2 800 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Лечение пульпита методом девитальной ампутации молочного зуба (анестезия, девитализирующая паста, временная пломба) I посещение</h3>
+            <div class="service-price">от 1 500 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Лечение пульпита методом девитальной ампутации молочного зуба (ампутация, Рутдент/IRM, Форедент, Пульпотек, временная пломба) II посещение</h3>
+            <div class="service-price">от 1 000 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Инструментальная и медикаментозная обработка всех корневых каналов (повторная)</h3>
+            <div class="service-price">от 200 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Временное пломбирование лекарственным препаратом всех корневых каналов (Пульпосептин, 2% гель Хлоргексидина)</h3>
+            <div class="service-price">от 200 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Инструментальная и медикаментозная обработка 1 корневого канала молочного зуба</h3>
+            <div class="service-price">от 400 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Запечатывание фиссуры зуба герметиком Sealant Clinpro (3M), SDR</h3>
+            <div class="service-price">от 2 000 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Запечатывание фиссур зуба герметиком (Sealant Clinpro, SDR) с глубоким раскрытием фиссур</h3>
+            <div class="service-price">от 2 500 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Прием врача-стоматолога детского с психологической подготовкой ребенка (д)</h3>
+            <div class="service-price">от 1 000 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Обучение гигиене полости рта и зубов индивидуальное, подбор средств и предметов гигиены полости рта (д)</h3>
+            <div class="service-price">от 500 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Удаление зубных отложений с помощью Air-Flow в области 1 зуба Д.</h3>
+            <div class="service-price">от 300 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Ультразвуковое удаление наддесневых и поддесневых зубных отложений в области 1 зуба(д) </h3>
+            <div class="service-price">от 200 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Прием </h3>
+            <p>(осмотр полости рта с помощью дополнительных инструментов и одноразовых аксессуаров (антиВИЧ, антигепатит профилактика), консультация врача-стоматолога детского первичный (д)</p>
+
+            <div class="service-price">от 500 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Прием </h3>
+            <p>(осмотр полости рта с помощью дополнительных инструментов и одноразовых аксессуаров (антиВИЧ, антигепатит профилактика), консультация врача-стоматолога детского повторный (д)</p>
+            <div class="service-price">от 400 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Изоляция зуба (OptraGate)</h3>
+            <div class="service-price">от 600 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Изоляция зуба (Коффердам)</h3>
+            <div class="service-price">от 600 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Изоляция зуба (жидкий коффердам)</h3>
+            <div class="service-price">от 300 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Аппликация дентин герметизирующего ликвида (Humanchemie Germany)</h3>
+            <div class="service-price">от 500 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Наложение лечебной прокладки (Biodentine)</h3>
+            <div class="service-price">от 2 500 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Полировка пломбы</h3>
+            <div class="service-price">от 750 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Наложение лечебной прокладки (IRM)</h3>
+            <div class="service-price">от 500 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Наложение изолирующей прокладки (SDR)</h3>
+            <div class="service-price">от 500 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Восстановление зуба пломбой с нарушением контактного пункта (2 поверхности) стеклоиономерными цементами (Fuji 9, Vitremer)</h3>
+            <div class="service-price">от 3 000 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Наложение временной пломбы</h3>
+            <div class="service-price">от 500 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Восстановление зуба пломбой по Блэку I класс фотополимером</h3>
+            <div class="service-price">от 4 500 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Восстановление зуба пломбой фотополимером по Блэку II класс и IV класс</h3>
+            <div class="service-price">от 5 500 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Восстановление зуба пломбой фотополимером по Блэку V класс</h3>
+            <div class="service-price">от 4 000 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Художественная реставрация зуба (восстановление бугров/режущего края) фотополимером</h3>
+            <div class="service-price">от 6 500 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Восстановление культи зуба пломбировочными материалами с использованием титановых и стекловолоконных штифтов ("Форма"+Totalcem, Fuji) (т)</h3>
+            <div class="service-price">от 3 000 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Восстановление культи зуба пломбировочными материалами с использованием кварцевых и стекловолоконных штифтов (RTD+Corecem) (т)</h3>
+            <div class="service-price">от 6 000 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Восстановление культи зуба пломбировочными материалами с использованием индивидуализированных кварцевых штифтов (RTD+FRC+Relyx) (т)</h3>
+            <div class="service-price">от 9 000 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Внутриканальное отбеливание зуба (подготовка полости с изоляцией СИЦ, внесение осветляющего агента, наложение временной повязки)</h3>
+            <div class="service-price">от 3 000 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Внутриканальное отбеливание зуба (замена осветляющего агента, наложение временной повязки)</h3>
+            <div class="service-price">от 1 000 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Профессиональное отбеливание зубов (Amazing Whitte)</h3>
+            <div class="service-price">от 15 000 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Профессиональное отбеливание зубов Opalescence Boost</h3>
+            <div class="service-price">от 15 000 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Снятие временной пломбы (т)</h3>
+            <div class="service-price">от 100 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Снятие постоянной пломбы</h3>
+            <div class="service-price">от 400 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Фиксация внутриканального стекловолоконного штифта RTD (для прямой реставрации)</h3>
+            <div class="service-price">от 3 000 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Фиксация внутриканального стекловолоконного штифта "Форма" (для прямой реставрации)</h3>
+            <div class="service-price">от 2 000 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Армирование в области одного зуба стекловолоконной лентой (Glasspan)</h3>
+            <div class="service-price">от 1 000 ₽</div>
+        </div>
+        <div class="service">
+            <h3>Прием первичный (осмотр полости рта с помощью дополнительных инструментов и одноразовых аксессуаров (антиВИЧ, антигепатит профилактика), консультация) врача-стоматолога.  (т)</h3>
+            <div class="service-price">от 500 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Прием повторный (осмотр полости рта с помощью дополнительных инструментов и одноразовых аксессуаров (антиВИЧ, антигепатит профилактика), консультация) врача-стоматолога.  (т)</h3>
+            <div class="service-price">от 400 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Консультация по имплантации с участием терапевта, хирурга, ортопеда с определением плана и стоимости лечения (т)</h3>
+            <div class="service-price">от 1 000 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Осмотр врача-стоматолога-терапевта</h3>
+            <div class="service-price">от 0 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Изготовление силиконового ключа для прямой реставрации (Speedex, Silagum, 3M Express)</h3>
+            <div class="service-price">от 500 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Изготовление временной коронки из временного композита</h3>
+            <div class="service-price">от 2 500 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Коррекция десневого края в области одного зуба</h3>
+            <div class="service-price">от 500 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Микропротезирование на стекловолоконной ленте (добавление 1 искуственного в области отсутствующего зуба)</h3>
+            <div class="service-price">от 12 000 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Изготовление окклюзионного ключа (восстановление анатомической формы)</h3>
+            <div class="service-price">от 1 000 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Прием первичный </h3>
+            <p>(осмотр полости рта с помощью дополнительных инструментов и одноразовых аксессуаров (антиВИЧ, антигепатит профилактика), консультация) зубного врача (т)</p>
+            <div class="service-price">от 500 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Прием повторный (осмотр, консультация) зубного врача (т)</h3>
+            <div class="service-price">от 400 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Лечение зуба с использованием микроскопа, индивидуальная оптика (каждое посещение)</h3>
+            <div class="service-price">от 3 500 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Наложение девитализирующей пасты</h3>
+            <div class="service-price">от 400 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Лечение зуба с использованием микроскопа, индивидуальная оптика (каждое посещение)</h3>
+            <div class="service-price">от 3 500 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Диагностическое препарирование зуба (диагностическое вскрытие полости,в целях теста качества и герметичности эндодонтического лечения)</h3>
+            <div class="service-price">от 900 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Наложение временной светоотверждаемой пломбы (1 порция)</h3>
+            <div class="service-price">от 500 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Пломбирование корневого канала зуба пастой (Endometazone N, Цинкфосфат цемент, Цинкоксидэвгенол цемент)</h3>
+            <div class="service-price">от 700 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Пломбирование одного корневого канала зуба гуттаперчивыми штифтами</h3>
+            <div class="service-price">от 1 200 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Закрытие перфорации стенки корневого канала зуба (РутДент+ Fuji IX, Vitrebond, Biodentine)</h3>
+            <div class="service-price">от 1 000 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Восстановление стенок зуба при эндолечении (СИЦ, композит)</h3>
+            <div class="service-price">от 1 000 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Пульпотомия (ампутация коронковой пульпы) с наложением Pulpotec на устья каналов</h3>
+            <div class="service-price">от 1 600 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Инструментальная и медикаментозная обработка корневого канала (повторная)</h3>
+            <div class="service-price">от 200 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Инструментальная и медикаментозная обработка хорошо проходимого корневого канала</h3>
+            <div class="service-price">от 1 500 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Инструментальная и медикаментозная обработка плохо проходимого корневого канала</h3>
+            <div class="service-price">от 2 000 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Временное пломбирование лекарственным препаратом корневого канала (Пульпосептин, 2% гель Хлоргексидина)</h3>
+            <div class="service-price">от 300 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Восстановление культи зуба пломбировочными материалами с использованием титановых и стекловолоконных штифтов ("Форма"+Totalcem, Fuji)</h3>
+            <div class="service-price">от 3000 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Восстановление культи зуба пломбировочными материалами с использованием кварцевых и стекловолоконных штифтов (RTD+Corecem)</h3>
+            <div class="service-price">от 6 000 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Восстановление культи зуба пломбировочными материалами с использованием индивидуализированных кварцевых штифтов (RTD+FRC+Relyx)</h3>
+            <div class="service-price">от 9 000 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Распломбировка корневого канала ранее запломбированного гуттаперчей (в 1 посещение)</h3>
+            <div class="service-price">от 500 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Распломбировка корневого канала ранее леченного фосфат-цементом/ резорцин-формальдегидным методом (в 1 посещение)</h3>
+            <div class="service-price">от 1 500 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Сложная распломбировка корневого канала (с закладыванием материал-растворяющих агентов)</h3>
+            <div class="service-price">от 1 200 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Снятие временной пломбы</h3>
+            <div class="service-price">от 100 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Удаление внутриканального штифта</h3>
+            <div class="service-price">от 800 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Извлечение отломка инструмента из корневого канала</h3>
+            <div class="service-price">от 3 000 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Прием первичный (осмотр полости рта с помощью дополнительных инструментов и одноразовых аксессуаров (антиВИЧ, антигепатит профилактика), консультация) врача-стоматолога.(т)</h3>
+            <div class="service-price">от 500 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Прием повторный (осмотр полости рта с помощью дополнительных инструментов и одноразовых аксессуаров (антиВИЧ, антигепатит профилактика), консультация) врача-стоматолога.(т)</h3>
+            <div class="service-price">от 400 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Удаление временного зуба</h3>
+            <div class="service-price">от 800 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Удаление постоянного зуба</h3>
+            <div class="service-price">от 2 800 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Удаление постоянного зуба II, III степени подвижности</h3>
+            <div class="service-price">от 2 000 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Удаление зуба сложное с разъединением корней</h3>
+            <div class="service-price">от 3 500 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Удаление дистопированного зуба мудрости</h3>
+            <div class="service-price">от 4 300 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Удаление ретинированного зуба мудрости</h3>
+            <div class="service-price">от 5 800 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Удаление ретинированного зуба мудрости (сложное)</h3>
+            <div class="service-price">от 7 500 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Резекция верхушки корня</h3>
+            <div class="service-price">от 5 000 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Вскрытие подслизистого или поднадкостничного очага воспаления в полости рта</h3>
+            <div class="service-price">от 1 500 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Вскрытие и дренирование одонтогенного абсцесса</h3>
+            <div class="service-price">от 1 500 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Отсроченный кюретаж лунки удаленного зуба</h3>
+            <div class="service-price">от 1 500 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Вскрытие и дренирование очага воспаления мягких тканей лица или дна полости рта</h3>
+            <div class="service-price">от 1 500 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Цистотомия</h3>
+            <div class="service-price">от 2 500 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Цистэктомия</h3>
+            <div class="service-price">от 5 000 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Пластика альвеолярного отростка</h3>
+            <div class="service-price">от 30 000 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Коррекция объема и формы альвеолярного отростка (Альвеолотомия-устранение экзостоза)</h3>
+            <div class="service-price">от 2 000 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Гингивэктомия</h3>
+            <div class="service-price">от 1 500 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Лоскутная операция в полости рта</h3>
+            <div class="service-price">от 5 000 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Костная пластика челюстно-лицевой области в области 1 зуба</h3>
+            <div class="service-price">от 70 000 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Костная пластика с использованием каркасной мембраны в области 1 зуба</h3>
+            <div class="service-price">от 75 000 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Костная пластика с использованием каркасной мембраны в области 2 зубов</h3>
+            <div class="service-price">от 95 000 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Костная пластика челюстно-лицевой области в области 2 зубов</h3>
+            <div class="service-price">от 90 000 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Использование костно-пластического материала</h3>
+            <div class="service-price">от 15 000 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Использование мембраны Creos</h3>
+            <div class="service-price">от 20 000 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Костная пластика челюстно-лицевой области в области 3 зубов</h3>
+            <div class="service-price">от 120 000 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Пластика уздечки верхней губы</h3>
+            <div class="service-price">от 3 000 ₽</div>
+        </div>
+
+        <div class="service">
+            <h3>Пластика уздечки нижней губы</h3>
+            <div class="service-price">от 2 000 ₽</div>
+        </div>
+
+    </section>
+
+    <div class="appointment-button-container">
+        <a href="appointment.html" class="appointment-button">Записаться на приём</a>
+    </div>
+
+</main>
+
+<a href="https://t.me/SDClinicBot" class="telegram-button" target="_blank">
+    <div class="telegram-icon">
+        <div class="white-icon">
+            <div class="icon left"></div>
+            <div class="icon right"></div>
+        </div>
+    </div>
+</a>
+
+<footer>
+    <div class="map-container">
+        <iframe src="https://yandex.ru/map-widget/v1/?ll=39.658122%2C43.658967&z=17&l=map&pt=39.658122,43.658967,pm2rdm"
+                width="100%" height="250" frameborder="0"></iframe>
+    </div>
+    <div class="footer-left">
+        <p>SUNDENT - современная клиника, предоставляющая все виды стоматологических услуг для взрослых и детей</p>
+    </div>
+    <div class="footer-center">
+        <p>Лицензия ЛО-23-01-014603
+            <br>
+            Выписка из реестра<br>
+            Юр.документы</p>
+    </div>
+    <div class="footer-right">
+        <a href="https://t.me/yourtelegram" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram" title="Telegram" />
+        </a>
+        <a href="https://wa.me/yourwhatsapp" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" title="WhatsApp" />
+        </a>
+        <a href="https://instagram.com/yourinstagram" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" title="Instagram" />
+        </a>
+        <a href="https://vk.com/yourvkontakte" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174881.png" alt="VKontakte" title="VKontakte" />
+        </a>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script src='js/burger.js'></script>
+<script src="js/server.js"></script>
+<script src="js/bvi.js"></script>
+
+
+</body>
+</html>

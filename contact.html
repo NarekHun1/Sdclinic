@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SDClinic - Контакты</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/telegram.css">
+  <link rel="stylesheet" href="css/burger.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/bvi.css">
+</head>
+<body>
+<header>
+  <div class="header-content">
+    <a href="index.html">
+      <div class="logo">
+        <img class ="logo " src="https://static.tildacdn.com/tild3431-6661-4236-b162-643232306238/logo_sd_2g.jpg" imgfield="img" style="max-height: 80px" alt="">
+      </div>
+    </a>
+    <div class="header-address">
+      г. Сочи, ул. Гельдара, 5/1
+      <a href="tel:+79183023455" class="phone">+7 (918) 302-34-55</a>
+    </div>
+    <!-- BVI -->
+    <!-- Онлайн-запись слева от Telegram -->
+    <a href="appointment.html" class="online-btn">Онлайн-запись</a>
+
+    <!-- Telegram справа -->
+    <a href="https://t.me/SDClinicBot" target="_blank" class="telegram-right">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
+    </a>
+
+    <!-- BVI под Telegram -->
+    <img src="https://cdn-icons-png.flaticon.com/512/159/159604.png"
+         alt="Версия для слабовидящих"
+         id="open-settings"
+         class="bvi-icon">
+    <div id="custom-tooltip" class="tooltip">Версия для слабовидящих</div>
+
+
+  </div>
+
+
+    <!-- Окно настроек -->
+    <div id="settings-modal" class="modal">
+      <div class="modal-content">
+        <span id="close-settings" class="close">&times;</span>
+
+        <h2>Настройки доступности</h2>
+
+        <div class="setting">
+          <label>Цвет фона: <input type="color" id="bg-color-picker"></label>
+        </div>
+
+        <div class="setting">
+          <label>Цвет текста: <input type="color" id="text-color-picker"></label>
+        </div>
+
+        <div class="setting">
+          <label>Шрифт:
+            <select id="font-select">
+              <option value="Arial, sans-serif">Arial</option>
+              <option value="Georgia, serif">Georgia</option>
+              <option value="Courier New, monospace">Courier New</option>
+            </select>
+          </label>
+        </div>
+
+        <button id="reset-settings">Сбросить настройки</button>
+      </div>
+    </div>
+    <button id="bvi-exit" style="display: none; position: fixed; top: 60px; right: 20px; z-index: 9999;">
+      Обычная версия
+    </button>
+    <nav>
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="index.html#kids-clinic">Детская клиника</a></li>
+        <li><a href="services.html">Услуги</a></li>
+        <li><a href="doctors.html">Врачи</a></li>
+        <li><a href="contact.html">Контакты</a></li>
+        <li><a href="appointment.html">Онлайн-запись</a></li>
+      </ul>
+    </nav>
+    <!-- Бургер-меню для мобильных -->
+    <div class="burger-menu" id="burger-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav">
+  <ul>
+    <li><a href="index.html">Главная</a></li>
+    <li><a href="index.html#kids-clinic">Детская клиника</a></li>
+    <li><a href="services.html">Услуги</a></li>
+    <li><a href="doctors.html">Врачи</a></li>
+    <li><a href="contact.html">Контакты</a></li>
+    <li><a href="appointment.html">Онлайн-запись</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section class="contact-info">
+    <h2>Наши контакты</h2>
+    <p>Телефон: <a href="tel:+78622001001">+7 (862) 200-10-01</a></p>
+    <p>Адрес: посёлок городского типа Дагомыс, городской округ Сочи, Краснодарский край, улица Гайдара, 5/1</p>
+  </section>
+
+  <section class="clinic-slider">
+    <div class="slider-container">
+      <div class="slider">
+        <div class="slide"><img src="media/Screenshot%20from%202025-03-23%2020-19-58.png" alt="Фото клиники 1"></div>
+        <div class="slide"><img src="media/Screenshot%20from%202025-03-23%2020-20-31.png" alt="Фото клиники 2"></div>
+        <div class="slide"><img src="media/Screenshot%20from%202025-03-23%2020-20-34.png" alt="Фото клиники 3"></div>
+        <div class="slide"><img src="media/Screenshot%20from%202025-03-23%2020-20-59.png" alt="Фото клиники 3"></div>
+        <div class="slide"><img src="media/Screenshot%20from%202025-03-23%2020-21-21.png" alt="Фото клиники 3"></div>
+      </div>
+    </div>
+  </section>
+  <!-- Кнопка записи -->
+  <div class="appointment-button-container">
+    <a href="appointment.html" class="appointment-button">Записаться</a>
+  </div>
+  <section class="clinic-info">
+    <p>SUNDENT - современная клиника, предоставляющая все виды стоматологических услуг для взрослых и детей. Уже более десяти лет SUNDENT успешно работает в центре Дагомыса, осуществляя качественное лечение пациентов всех возрастов.</p>
+    <p>Максимально бережно и с постепенной адаптацией проходят детские приемы.</p>
+  </section>
+</main>
+
+<a href="https://t.me/SDClinicBot" class="telegram-button" target="_blank">
+  <div class="telegram-icon">
+    <div class="white-icon">
+      <div class="icon left"></div>
+      <div class="icon right"></div>
+    </div>
+  </div>
+</a>
+
+<footer>
+  <div class="map-container">
+    <iframe src="https://yandex.ru/map-widget/v1/?ll=39.658122%2C43.658967&z=17&l=map&pt=39.658122,43.658967,pm2rdm"
+            width="100%" height="250" frameborder="0"></iframe>
+  </div>
+  <div class="footer-left">
+    <p>SUNDENT - современная клиника, предоставляющая все виды стоматологических услуг для взрослых и детей</p>
+  </div>
+  <div class="footer-center">
+    <p>Лицензия ЛО-23-01-014603
+      <br>
+      Выписка из реестра<br>
+      Юр.документы</p>
+  </div>
+  <div class="footer-right">
+    <a href="https://t.me/yourtelegram" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram" title="Telegram">
+    </a>
+    <a href="https://wa.me/yourwhatsapp" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" title="WhatsApp">
+    </a>
+    <a href="https://instagram.com/yourinstagram" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" title="Instagram">
+    </a>
+    <a href="https://vk.com/yourvkontakte" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174881.png" alt="VKontakte" title="VKontakte">
+    </a>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/burger.js"></script>
+<script src="js/bvi.js"></script>
+</body>
+</html>
