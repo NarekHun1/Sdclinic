@@ -1,0 +1,65 @@
+/*futer*/
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-left, .footer-center, .footer-right {
+    flex: 1 1 30%;
+    margin: 10px;
+    text-align: center;
+}
+
+.footer-center {
+    text-align: center;
+}
+
+.footer-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-right a {
+    margin: 0 10px;
+}
+
+.footer-right img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.footer-right img:hover {
+    transform: scale(1.2);
+}
+
+.footer-left p, .footer-center p {
+    font-size: 14px;
+}
+
+.footer-center p {
+    font-weight: bold;
+    margin-top: 10px;
+}
+/* Чтобы футер был внизу при малом контенте */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1; /* Заполняет всё доступное место */
+}

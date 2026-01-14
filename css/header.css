@@ -1,0 +1,270 @@
+/* =================== HEADER =================== */
+header {
+    background-color: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+}
+
+/* Верхняя строка */
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.header-top .logo img {
+    max-height: 70px;
+}
+
+.header-address {
+    font-size: 14px;
+    color: #333;
+    margin-left: 15px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.online-btn {
+    padding: 8px 15px;
+    background: #FFD700;
+    color: #000;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.online-btn:hover {
+    background: #e6c200;
+}
+
+.header-right img {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.header-right img:hover {
+    transform: scale(1.2);
+}
+
+/* Нижняя строка */
+.header-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    margin: 5px auto 0 auto;
+    padding-top: 5px;
+    border-top: 1px solid #eee;
+}
+
+/* Меню слева */
+nav#nav-menu {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 18px; /* подгон под логотип */
+}
+
+nav#nav-menu ul {
+    display: flex;
+    gap: 10px; /* расстояние между пунктами */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav#nav-menu ul li {
+    margin: 0 -1px;
+    padding: 0;
+}
+
+nav#nav-menu ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav#nav-menu ul li a:hover {
+    color: #FFD700;
+    text-decoration: underline;
+}
+
+/* Телефон + BVI справа */
+.header-bottom-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-bottom-right .dropdown {
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+.header-bottom-right .dropdown:hover {
+    color: #FFD700;
+    text-decoration: underline;
+}
+
+.header-bottom-right img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+/* =================== Мобильное меню =================== */
+.mobile-nav {
+    display: none; /* скрыто по умолчанию */
+    position: fixed;
+    top: 70px; /* ниже шапки */
+    left: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 999;
+    padding: 20px;
+}
+
+.mobile-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mobile-nav ul li a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+}
+
+.mobile-nav ul li a:hover {
+    color: #FFD700;
+}
+
+/* Показать при активном классе */
+.mobile-nav.active {
+    display: block;
+}
+
+/* =================== Адаптив =================== */
+/*@media (max-width: 1024px) {*/
+/*    !* Скрываем нижний блок *!*/
+/*    .header-bottom {*/
+/*        display: none;*/
+/*    }*/
+
+/*    !* Верхний блок — всё по центру *!*/
+/*    .header-top {*/
+/*        flex-direction: column;*/
+/*        align-items: center;*/
+/*        gap: 10px;*/
+/*        padding: 15px 0;*/
+/*    }*/
+
+/*    #open-settings {*/
+/*        display: block;*/
+/*        margin: 0 auto;*/
+/*        width: 40px;*/
+/*        height: 40px;*/
+/*    }*/
+
+/*    !* Бургер *!*/
+/*    .burger-menu {*/
+/*        display: flex;*/
+/*        position: absolute;*/
+/*        top: 50%;*/
+/*        right: 20px;*/
+/*        transform: translateY(-50%);*/
+/*        flex-direction: column;*/
+/*        gap: 4px;*/
+/*        cursor: pointer;*/
+/*        z-index: 1001;*/
+/*    }*/
+
+/*    .burger-menu span {*/
+/*        width: 30px;*/
+/*        height: 3px;*/
+/*        background: #333;*/
+/*        transition: 0.3s;*/
+/*    }*/
+/*}*/
+
+@media (max-width: 1024px) {
+    /* Скрываем нижний блок полностью */
+    .header-bottom {
+        display: none;
+    }
+
+    /* Верхний блок — всё по центру */
+    .header-top {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; /* центрируем по горизонтали */
+        gap: 10px;
+        padding: 15px 0;
+    }
+
+    /* Скрываем элементы, которые не нужны на мобильных */
+    .dropdown,
+    .header-address,
+    .online-btn,
+    nav#nav-menu,
+    .burger-menu {
+        display: none;
+    }
+    .mobile-nav .online-btn {
+        display: block;
+        margin: 15px 0;
+        padding: 10px 20px;
+        background-color: #FFD700;
+        color: black;
+        text-align: center;
+        border-radius: 8px;
+        text-decoration: none;
+    }
+
+    .mobile-nav .online-btn:hover {
+        background-color: #FFD700;
+    }
+
+    /* Оставляем только логотип и BVI по центру */
+    .header-right {
+        justify-content: center;
+        gap: 15px;
+    }
+}
+
+/* Планшеты */
+@media (max-width: 900px) { #open-settings { width: 35px; height: 35px; } }
+/* Мобильные */
+@media (max-width: 750px) { #open-settings { width: 32px; height: 32px; } }
+/* Очень маленькие */
+@media (max-width: 480px) { #open-settings { width: 28px; height: 28px; } }

@@ -1,0 +1,148 @@
+/* ====== Портфолио ====== */
+.portfolio {
+    padding: 180px 20px 80px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.portfolio h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.portfolio-subtitle {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* всегда 2 колонки */
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.work-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    background: #fff;
+}
+
+.work-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    display: block;
+}
+.portfolio-subtitle {
+    font-size: 16px;
+}
+.work-item:hover {
+    transform: translateY(-5px);
+}
+
+.work-item:hover img {
+    transform: scale(1.08);
+}
+.portfolio h2 {
+    font-size: 28px; /* уменьшаем размер */
+    text-align: center; /* если нужно по центру */
+}
+
+/* затемнение + текст */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    transition: height 0.3s ease;
+    overflow: hidden;
+    border-radius: 0 0 12px 12px;
+}
+
+.work-item:hover .overlay {
+    height: 40%;
+}
+
+/* ====== 📱 Адаптив ====== */
+@media (max-width: 1024px) {
+    .portfolio {
+        padding: 60px 15px;
+    }
+
+    .portfolio h2 {
+        font-size: 2em;
+    }
+
+    .portfolio-subtitle {
+        font-size: 1em;
+        margin-bottom: 30px;
+    }
+
+    .portfolio-grid {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio {
+        padding-top: 20px    }
+
+    .portfolio h2 {
+        font-size: 1.8em;
+    }
+
+    .portfolio-subtitle {
+        font-size: 0.95em;
+        margin-bottom: 30px;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr 1fr; /* на телефоне тоже 2 колонки */
+        gap: 15px;
+    }
+
+    .overlay {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 1024px) {
+    .portfolio {
+        padding-top: 200px; /* чтобы текст был виден */
+        padding-bottom: 50px;;
+    }
+
+    .portfolio h2 {
+        font-size: 1.5em;
+    }
+
+    .portfolio-subtitle {
+        font-size: 0.9em;
+        margin-bottom: 20px;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr 1fr; /* все равно 2 колонки */
+        gap: 10px;
+    }
+
+    .overlay {
+        font-size: 0.9em;
+    }
+}

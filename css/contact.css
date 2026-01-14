@@ -1,0 +1,100 @@
+/* Контактная информация */
+.contact-info {
+    text-align: center;
+    padding: 110px 40px 40px 40px;
+    background-color: #f4f4f4;
+}
+
+.contact-info h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.contact-info a {
+    color: #ff6600;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Контейнер слайдера */
+.clinic-slider {
+    display: flex;
+    justify-content: center; /* Центрируем слайдер */
+    padding: 20px;
+}
+
+/* Контейнер для всех слайдов */
+.slider-container {
+    width: 80%; /* Ширина слайдера */
+    max-width: 1200px; /* Ограничение максимальной ширины слайдера */
+    overflow: hidden; /* Скрываем лишние части слайдов */
+    border-radius: 10px; /* Скругляем углы */
+}
+
+/* Обертка слайдов */
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Каждый слайд */
+.slide {
+    min-width: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Скругление углов изображений */
+}
+
+/* Стиль для кнопки записи */
+.appointment-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* Кнопка "Записаться" */
+.appointment-button {
+    padding: 15px 30px;
+    background-color: #ff6600;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.appointment-button:hover {
+    background-color: #e65c00;
+    transform: scale(1.05);
+}
+
+.appointment-button:active {
+    transform: scale(0.95);
+}
+/*text*/
+.clinic-info {
+
+    text-align: center; /* Центрируем текст */
+    margin: 40px auto; /* Добавляем отступы сверху и снизу */
+    max-width: 800px; /* Ограничиваем ширину блока */
+}
+
+.clinic-info p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}

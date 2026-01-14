@@ -1,0 +1,92 @@
+/* 📩 Telegram Floating Button */
+.telegram-button {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 1000;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.telegram-button:hover {
+    transform: scale(1.1);
+}
+
+/* 🟦 Telegram Icon */
+.telegram-icon {
+    width: 57px;
+    height: 57px;
+    border-radius: 50%;
+    position: relative;
+    background: linear-gradient(#36aee0, #1c96d1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* ✈️ Telegram Paper Plane */
+.white-icon {
+    position: absolute;
+    width: calc(80px / 1.7);
+    height: calc(80px / 2);
+    left: 58%;
+    top: 45%;
+    transform: translate(-50%, -50%) rotate(30deg) skewX(-18deg) skewY(6deg);
+}
+
+/* 🔼 Left Side of Plane */
+.icon {
+    height: 100%;
+    width: 50%;
+    background: white;
+    border-radius: 6px 0 0 6px;
+    position: absolute;
+    transform: skewY(-10deg);
+    clip-path: polygon(0 100%, 0 95%, 95% 2%, 98% 0, 150% 0, 150% 150%);
+}
+
+/* 🔽 Right Side of Plane */
+.right {
+    left: 50.5%;
+    transform: skewY(calc(-10deg * -1)) rotateY(180deg) scaleX(1.06);
+}
+
+/* ✨ Highlights */
+.left::before, .left::after {
+    content: "";
+    position: absolute;
+    border-radius: 10px 6px 6px .15em;
+}
+
+.left::before {
+    width: 40%;
+    height: 60%;
+    background: #cde1ee;
+    top: 48%;
+    left: 89%;
+    transform: skewY(35deg) rotate(8deg);
+}
+
+.left::after {
+    background: #afc5db;
+    width: 22%;
+    height: 22%;
+    top: 87%;
+    left: 101.5%;
+    transform: skewX(50deg) rotate(8deg);
+}
+
+/* ✈️ Floating Animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+.telegram-icon {
+    animation: bounce 1.5s infinite ease-in-out;
+}

@@ -1,0 +1,127 @@
+/* =========================
+   Services Section Адаптив
+========================= */
+
+/* Общие стили для всех экранов */
+.services-section {
+    padding: 180px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.services-section h1 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.services-section p {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.services-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* по умолчанию вертикально */
+    gap: 15px;
+    max-width: 800px;
+}
+
+.services-list li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-top: 4px solid #FFD700;
+    border-radius: 8px;
+    padding: 20px;
+    font-size: 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+}
+
+.services-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Spacer под фиксированный header */
+.header-spacer {
+    height: 180px;
+}
+
+/* ====== Адаптив для планшетов ====== */
+/* ====== Бургер-меню для планшетов и мобильных ====== */
+@media (max-width: 1024px) {
+
+
+    .nav.active {
+        display: flex;
+    }
+
+    .burger-menu {
+        display: flex; /* показываем бургер */
+        cursor: pointer;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .burger-menu span {
+        width: 30px;
+        height: 3px;
+        background: black;
+        border-radius: 2px;
+        transition: 0.3s;
+    }
+}
+
+
+/* ====== Адаптив для мобильных телефонов ====== */
+@media (max-width: 768px) {
+    .services-section {
+        padding-top: 200px; /* учитываем фиксированный header */
+        padding-bottom: 40px;
+    }
+
+    .services-section h1 {
+        font-size: 24px;
+    }
+
+    .services-section p {
+        font-size: 14px;
+    }
+
+    .services-list li {
+        font-size: 15px;
+        padding: 15px;
+    }
+
+    .services-list {
+        gap: 10px;
+    }
+}
+
+/* ====== Маленькие смартфоны ====== */
+@media (max-width: 480px) {
+    .services-section {
+        padding-top: 200px;
+        padding-bottom: 30px;
+    }
+
+    .services-section h1 {
+        font-size: 20px;
+    }
+
+    .services-section p {
+        font-size: 13px;
+    }
+
+    .services-list li {
+        font-size: 14px;
+        padding: 12px;
+    }
+}

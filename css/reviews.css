@@ -1,0 +1,196 @@
+/* ====== Spacer под фиксированный header ====== */
+.header-spacer {
+    height: 200px; /* подгоняй под реальную высоту твоего header */
+    width: 100%;
+}
+
+/* ====== Блок отзывов ====== */
+.reviews-section {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 200px 20px 60px; /* отступ сверху и снизу */
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    background-color: #fff;
+}
+
+.reviews-section h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.reviews-section p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.reviews-section .reviews-subtitle {
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+/* Сетка с фото отзывов */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: 30px auto 0;
+}
+
+.review-item {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.review-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.review-item:hover {
+    transform: scale(1.03);
+}
+
+/* Lightbox для увеличения фото */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* небольшой отступ на мобильных */
+}
+
+.lightbox img {
+    max-width: 95%;
+    max-height: 95%;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+    transition: transform 0.3s ease;
+}
+
+.lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ====== Мобильная адаптация ====== */
+
+/* Планшеты */
+@media screen and (max-width: 1024px) {
+
+        .reviews-section {
+        padding: 180px 20px 40px;
+    }
+
+    .reviews-section h2 {
+        font-size: 26px;
+    }
+
+    .reviews-section p,
+    .reviews-section .reviews-subtitle {
+        font-size: 15px;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr 1fr; /* 2 фото на планшете */
+        gap: 20px;
+    }
+
+    .lightbox img {
+        max-width: 80%;
+        max-height: 80%;
+    }
+
+    .lightbox .close {
+        font-size: 35px;
+        top: 15px;
+        right: 25px;
+    }
+}
+
+/* Мобильные телефоны */
+@media screen and (max-width: 768px) {
+    .reviews-section {
+        padding: 220px 15px 30px;
+    }
+
+    .reviews-section h2 {
+        font-size: 24px;
+    }
+
+    .reviews-section p,
+    .reviews-section .reviews-subtitle {
+        font-size: 14px;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr; /* по 1 фото */
+        gap: 15px;
+    }
+
+    .lightbox img {
+        width: 90%;
+        height: auto;
+    }
+
+    .lightbox .close {
+        font-size: 30px;
+        top: 10px;
+        right: 20px;
+    }
+}
+
+/* Маленькие смартфоны */
+@media screen and (max-width: 480px) {
+    .reviews-section {
+        padding: 200px 10px 20px;
+    }
+
+    .reviews-section h2 {
+        font-size: 22px;
+    }
+
+    .reviews-section p,
+    .reviews-section .reviews-subtitle {
+        font-size: 13px;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .lightbox img {
+        width: 95%;
+        height: auto;
+    }
+
+    .lightbox .close {
+        font-size: 25px;
+        top: 8px;
+        right: 15px;
+    }
+}

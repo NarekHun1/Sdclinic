@@ -1,0 +1,163 @@
+/* Основной контейнер слайдера */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px; /* Максимальная ширина */
+    height: 500px; /* Высота слайдера */
+    overflow: hidden;
+    margin: 100px auto 20px; /* 🔥 сделал сверху отступ 100px */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Лента слайдов */
+.slider {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Отдельный слайд */
+.slide {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Изображение внутри слайда */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Картинка растягивается без искажений */
+}
+
+/* Кнопки слайдера */
+.slider-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.slider-buttons button {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.slider-buttons button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    .slider-container {
+        height: 350px; /* Меньше высота на мобильных */
+    }
+}
+
+@media (max-width: 480px) {
+    .slider-container {
+        height: 290px; /* Еще меньше высота на маленьких экранах */
+    }
+}
+
+.custom-slider-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 40px 20px;
+    background-color: #f8f8f8;
+}
+
+.description {
+    flex: 1;
+    min-width: 300px;
+}
+
+.description h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.description p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.slider-wrapper {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255,255,255,0.7);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.prev:hover, .next:hover {
+    background-color: #ddd;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+    .custom-slider-section {
+        flex-direction: column;
+    }
+
+    .description h2 {
+        font-size: 22px;
+    }
+
+    .description p {
+        font-size: 15px;
+    }
+}

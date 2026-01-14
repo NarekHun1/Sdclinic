@@ -1,0 +1,90 @@
+/* ============================
+   LOGO
+============================ */
+.logo-container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.site-logo {
+    height: 50px;
+}
+
+
+/* Tooltip */
+.tooltip {
+    display: none;
+    position: absolute;
+    top: 105%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    z-index: 1001;
+}
+
+.bvi-icon:hover + .tooltip {
+    display: block;
+}
+
+
+
+/* ============================
+   ADAPTIVE / MOBILE
+============================ */
+@media (max-width: 768px) {
+    .telegram-right {
+        top: 10px;
+        right: 10px;
+        height: 35px;
+        width: 35px;
+    }
+
+    .bvi-icon {
+        top: 55px;
+        right: 10px;
+        height: 30px;
+        width: 30px;
+    }
+
+    .online-btn {
+        top: 10px;
+        right: 55px;
+        padding: 5px 14px;
+        font-size: 13px;
+    }
+
+    .header-address {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 360px) {
+    .telegram-right {
+        height: 30px;
+        width: 30px;
+    }
+
+    .bvi-icon {
+        height: 28px;
+        width: 28px;
+    }
+
+    .online-btn {
+        right: 50px;
+        padding: 4px 12px;
+        font-size: 12px;
+    }
+
+    .header-address {
+        font-size: 11px;
+    }
+}
