@@ -118,7 +118,7 @@
 <main class="appointment-wrapper">
     <div class="appointment-box">
         <h1 class="form-title">Онлайн-запись</h1>
-        <form class="appointment-form" action="/send-to-telegram" method="post">
+        <form class="appointment-form" id="appointmentForm">
             <label>
                 Имя:
                 <input type="text" name="name" required>
@@ -184,8 +184,42 @@
         </a>
     </div>
 </footer>
+<script>
+    const form = document.getElementById('appointmentForm');
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const payload = {
+            name: formData.get('name'),
+            phone: formData.get('phone'),
+            service: formData.get('service'),
+        };
+
+        try {
+            const res = await fetch('/api/send-to-telegram', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload),
+            });
+
+            const data = await res.json();
+
+            if (!res.ok) {
+                alert(data.message || 'Ошибка');
+                return;
+            }
+
+            alert('Заявка отправлена! Мы свяжемся с вами.');
+            form.reset();
+        } catch (err) {
+            alert('Ошибка подключения к серверу. Попробуйте позже.');
+        }
+    });
+</script>
 <script src="js/script.js"></script>
-<script src="js/server.js"></script>
+<!--<script src="js/server.js"></script>-->
 <script src="js/burger.js"></script>
 <script src="js/bvi.js"></script>
 </body>
