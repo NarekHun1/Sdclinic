@@ -35,37 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("⚠ Ошибка соединения с сервером.");
         }
     });
-
-    // document.addEventListener("DOMContentLoaded", function () {
-    //     const burgerMenu = document.getElementById("burger-menu");
-    //     const mobileNav = document.getElementById("mobile-nav");
-    //
-    //     burgerMenu.addEventListener("click", function () {
-    //         mobileNav.classList.toggle("active");
-    //         burgerMenu.classList.toggle("active");
-    //     });
-    // });
-
-
-    // Slider logic
-    // const slides = document.querySelectorAll(".slide");
-    // let currentIndex = 0;
-    //
-    // function showSlide(index) {
-    //     const slider = document.querySelector(".slider");
-    //     if (slider) {
-    //         const offset = -index * 100;
-    //         slider.style.transform = `translateX(${offset}%)`;
-    //     }
-    // }
-    //
-    // function autoSlide() {
-    //     currentIndex = (currentIndex + 1) % slides.length;
-    //     showSlide(currentIndex);
-    // }
-    //
-    // setInterval(autoSlide, 3000);
-    // showSlide(currentIndex);
 });
 
 function validateForm(data) {
