@@ -184,7 +184,7 @@
         </a>
     </div>
 </footer>
-<script>
+<<script>
     const form = document.getElementById('appointmentForm');
 
     form.addEventListener('submit', async (e) => {
@@ -192,22 +192,31 @@
 
         const formData = new FormData(form);
         const payload = {
-            name: formData.get('name'),
-            phone: formData.get('phone'),
-            service: formData.get('service'),
+            name: (formData.get('name') || '').toString().trim(),
+            phone: (formData.get('phone') || '').toString().trim(),
+            service: (formData.get('service') || '').toString().trim(),
         };
 
         try {
-            const res = await fetch('/api/send-to-telegram', {
+            const res = await fetch('https://sdclinicsochi.clinic/api/send-to-telegram', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload),
+                cache: 'no-store',
             });
 
-            const data = await res.json();
+            const contentType = res.headers.get('content-type') || '';
+            let data = null;
+
+            if (contentType.includes('application/json')) {
+                data = await res.json();
+            } else {
+                const text = await res.text();
+                throw new Error(`Сервер вернул не JSON (status ${res.status}): ${text.slice(0, 120)}`);
+            }
 
             if (!res.ok) {
-                alert(data.message || 'Ошибка');
+                alert((data && data.message) || 'Ошибка');
                 return;
             }
 
@@ -215,11 +224,12 @@
             form.reset();
         } catch (err) {
             alert('Ошибка подключения к серверу. Попробуйте позже.');
+            console.error(err);
         }
     });
 </script>
-<script src="js/script.js?v=7"></script>
-<script src="js/burger.js?v=7"></script>
-<script src="js/bvi.js?v=7"></script>
+<script src="js/script.js?v=8"></script>
+<script src="js/burger.js?v=8"></script>
+<script src="js/bvi.js?v=8"></script>
 </body>
 </html>
