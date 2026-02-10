@@ -184,50 +184,63 @@
         </a>
     </div>
 </footer>
-<<script>
+<script>
     const form = document.getElementById('appointmentForm');
 
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const formData = new FormData(form);
-        const payload = {
-            name: (formData.get('name') || '').toString().trim(),
-            phone: (formData.get('phone') || '').toString().trim(),
-            service: (formData.get('service') || '').toString().trim(),
-        };
-
+    async function postWithRetry(url, payload, retries = 1) {
         try {
-            const res = await fetch('https://sdclinicsochi.clinic/api/send-to-telegram', {
+            const res = await fetch(url, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload),
                 cache: 'no-store',
             });
 
-            const contentType = res.headers.get('content-type') || '';
-            let data = null;
+            const ct = res.headers.get('content-type') || '';
+            const body = ct.includes('application/json') ? await res.json() : { message: await res.text() };
 
-            if (contentType.includes('application/json')) {
-                data = await res.json();
-            } else {
-                const text = await res.text();
-                throw new Error(`Сервер вернул не JSON (status ${res.status}): ${text.slice(0, 120)}`);
+            return { ok: res.ok, status: res.status, body };
+        } catch (err) {
+            if (retries > 0) {
+                await new Promise(r => setTimeout(r, 600)); // маленькая пауза
+                return postWithRetry(url, payload, retries - 1);
             }
+            throw err;
+        }
+    }
 
-            if (!res.ok) {
-                alert((data && data.message) || 'Ошибка');
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const btn = form.querySelector('button[type="submit"]');
+        if (btn) btn.disabled = true;
+
+        const fd = new FormData(form);
+        const payload = {
+            name: (fd.get('name') || '').toString().trim(),
+            phone: (fd.get('phone') || '').toString().trim(),
+            service: (fd.get('service') || '').toString().trim(),
+        };
+
+        try {
+            const result = await postWithRetry('https://sdclinicsochi.clinic/api/send-to-telegram', payload, 1);
+
+            if (!result.ok) {
+                alert(result.body?.message || `Ошибка (status ${result.status})`);
                 return;
             }
 
             alert('Заявка отправлена! Мы свяжемся с вами.');
             form.reset();
         } catch (err) {
-            alert('Ошибка подключения к серверу. Попробуйте позже.');
+            alert('⚠ Ошибка соединения с сервером.');
             console.error(err);
+        } finally {
+            if (btn) btn.disabled = false;
         }
     });
 </script>
+
 <script src="js/script.js?v=8"></script>
 <script src="js/burger.js?v=8"></script>
 <script src="js/bvi.js?v=8"></script>
