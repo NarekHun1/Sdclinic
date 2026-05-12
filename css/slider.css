@@ -1,18 +1,22 @@
+/* =========================================================
+   HERO SLIDER (верхний) — работает с твоим slider.js (prevSlide/nextSlide)
+   Требует: <div class="slider-container hero-slider">
+   ========================================================= */
+
 /* Основной контейнер слайдера */
-.slider-container {
+.slider-container.hero-slider {
     position: relative;
     width: 100%;
-    max-width: 1200px; /* Максимальная ширина */
-    height: 500px; /* Высота слайдера */
+    max-width: 1200px;
+    height: 500px;
     overflow: hidden;
-    margin: 100px auto 20px; /* 🔥 сделал сверху отступ 100px */
+    margin: 100px auto 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-
 /* Лента слайдов */
-.slider {
+.slider-container.hero-slider .slider {
     display: flex;
     width: 100%;
     height: 100%;
@@ -20,7 +24,7 @@
 }
 
 /* Отдельный слайд */
-.slide {
+.slider-container.hero-slider .slide {
     min-width: 100%;
     height: 100%;
     display: flex;
@@ -29,23 +33,25 @@
 }
 
 /* Изображение внутри слайда */
-.slide img {
+.slider-container.hero-slider .slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Картинка растягивается без искажений */
+    object-fit: cover;
+    display: block;
 }
 
 /* Кнопки слайдера */
-.slider-buttons {
+.slider-container.hero-slider .slider-buttons {
     position: absolute;
     top: 50%;
     width: 100%;
     display: flex;
     justify-content: space-between;
     transform: translateY(-50%);
+    z-index: 5;
 }
 
-.slider-buttons button {
+.slider-container.hero-slider .slider-buttons button {
     background: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
@@ -54,22 +60,27 @@
     cursor: pointer;
 }
 
-.slider-buttons button:hover {
+.slider-container.hero-slider .slider-buttons button:hover {
     background: rgba(0, 0, 0, 0.8);
 }
 
-/* Адаптация для мобильных устройств */
+/* Адаптация для мобильных */
 @media (max-width: 768px) {
-    .slider-container {
-        height: 350px; /* Меньше высота на мобильных */
+    .slider-container.hero-slider {
+        height: 350px;
     }
 }
 
 @media (max-width: 480px) {
-    .slider-container {
-        height: 290px; /* Еще меньше высота на маленьких экранах */
+    .slider-container.hero-slider {
+        height: 290px;
     }
 }
+
+/* =========================================================
+   KIDS SECTION (custom-slider-section) — блок “Детский кабинет”
+   Требует: <div class="slider-wrapper my-slider">
+   ========================================================= */
 
 .custom-slider-section {
     display: flex;
@@ -98,35 +109,44 @@
     color: #333;
 }
 
-.slider-wrapper {
+/* Обёртка детского слайдера */
+.slider-wrapper.my-slider {
     flex: 1;
     min-width: 300px;
     position: relative;
     overflow: hidden;
 }
 
-.slider {
+/* Лента детского слайдера */
+.slider-wrapper.my-slider .slider {
     display: flex;
-    transition: transform 0.5s ease-in-out;
     width: 100%;
+    transition: transform 0.5s ease-in-out;
 }
 
-.slide {
+/* Слайд детского слайдера */
+.slider-wrapper.my-slider .slide {
     min-width: 100%;
     box-sizing: border-box;
 }
 
-.slide img {
+/* Картинки детского слайдера */
+.slider-wrapper.my-slider .slide img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: block;
 }
 
-.prev, .next {
+/* Кнопки детского слайдера */
+.slider-wrapper.my-slider .prev,
+.slider-wrapper.my-slider .next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(255,255,255,0.7);
+    background-color: rgba(255, 255, 255, 0.7);
     border: none;
     padding: 10px 15px;
     cursor: pointer;
@@ -135,15 +155,16 @@
     z-index: 2;
 }
 
-.prev:hover, .next:hover {
+.slider-wrapper.my-slider .prev:hover,
+.slider-wrapper.my-slider .next:hover {
     background-color: #ddd;
 }
 
-.prev {
+.slider-wrapper.my-slider .prev {
     left: 10px;
 }
 
-.next {
+.slider-wrapper.my-slider .next {
     right: 10px;
 }
 
