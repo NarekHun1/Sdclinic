@@ -1,9 +1,9 @@
 .appointment-page{
-    background: url('media/Pasted image (3).png');
+    background: url('media/Pasted image (3).jpg');
     background-size: cover
 }
 .appointment-page {
-    background-image: url("../media/Pasted image (3).png"); /* Update with your image path */
+    background-image: url("../media/Pasted image (3).jpg"); /* Update with your image path */
     background-size: cover;
     background-position: center;
 }
