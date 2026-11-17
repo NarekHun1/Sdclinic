@@ -331,3 +331,77 @@
     .appointment-button:active {
         transform: scale(0.95);
     }
+
+/* Профиль нового специалиста */
+.doctor-featured {
+    width: calc(100% - 40px);
+    max-width: 1000px;
+    align-items: stretch;
+}
+
+.doctor-featured .doctor-photo {
+    flex: 0 0 38%;
+    width: 38%;
+    border-radius: 0;
+}
+
+.doctor-featured .doctor-photo img {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    object-position: center 32%;
+}
+
+.doctor-featured .doctor-info {
+    padding: 32px 38px;
+    text-align: left;
+}
+
+.doctor-featured .doctor-info h3 {
+    margin-top: 0;
+}
+
+.doctor-featured .doctor-role {
+    margin: 0 0 18px;
+}
+
+.doctor-services {
+    margin: 0;
+    padding-left: 20px;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+@media screen and (max-width: 768px) {
+    .doctor-featured {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .doctor-featured .doctor-photo {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .doctor-featured .doctor-photo img {
+        height: 400px;
+        object-position: center 30%;
+    }
+
+    .doctor-featured .doctor-info {
+        width: auto;
+        padding: 24px;
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .doctor-featured .doctor-photo img {
+        height: 340px;
+    }
+
+    .doctor-services {
+        font-size: 15px;
+    }
+}
